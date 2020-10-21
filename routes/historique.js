@@ -22,7 +22,11 @@ router.get('/:historiqueId' , async (req , res) => {
 
 router.post('/' , async (req,res) => {
     const historique = new Historique({
-        num_programme: req.body.num_programme
+        num_programme: req.body.num_programme,
+        donnees: req.body.donnees,
+        resultat: req.body.resultat,
+        date: req.body.date,
+        source_chatbot: req.body.source_chatbot
     });
 
     try{
