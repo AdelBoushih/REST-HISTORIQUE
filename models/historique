@@ -1,0 +1,26 @@
+const express = require('express');
+const mongoose = require('mongoose');
+
+const HistoriqueSchema = new mongoose.Schema ({
+    num_programme: {
+        type: String,
+        required: true
+    },
+    donnees: {
+        type: String
+    },
+    resultat: {
+        type: Number
+    },
+    date: {
+        type: Date,
+        default: Date.now()
+    },
+    source_chatbot: {
+        type: Boolean,
+    },
+});
+
+const Historique = mongoose.model('Historique', HistoriqueSchema);
+
+module.exports = Historique;
